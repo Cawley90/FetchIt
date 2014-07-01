@@ -1,3 +1,6 @@
+$(document).ready(function(){
+var userInput = $('input[id=vidSearch]').val();
+
 // Your use of the YouTube API must comply with the Terms of Service:
 // https://developers.google.com/youtube/terms
 
@@ -21,11 +24,11 @@ function onYouTubeApiLoad() {
     search();
 }
 
-function search() {
+$(document).on('click', '#searchSubmit', function search() {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
-        part: 'snippet',
-        q: 'Bungie',
+        part: snippet,
+        q: userInput,
     });
     
     // Send the request to the API server,
@@ -37,3 +40,5 @@ function search() {
 function onSearchResponse(response) {
     showResponse(response);
 }
+
+});
