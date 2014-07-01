@@ -24,7 +24,8 @@ function onYouTubeApiLoad() {
     search();
 }
 
-$(document).on('click', '#searchSubmit', function search() {
+
+function search() {
     // Use the JavaScript client library to create a search.list() API call.
     var request = gapi.client.youtube.search.list({
         part: snippet,
@@ -33,7 +34,8 @@ $(document).on('click', '#searchSubmit', function search() {
     
     // Send the request to the API server,
     // and invoke onSearchRepsonse() with the response.
-    request.execute(onSearchResponse);
+    $(document).on('click', '#searchSubmit' function(){
+        request.execute(onSearchResponse);
 }
 
 // Called automatically with the response of the YouTube API request.
