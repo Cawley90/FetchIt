@@ -2,6 +2,10 @@
 
 $(document).ready(function() {
 
+    $('#toolbox').click(function(){
+        $('#options').toggle("fast");
+    })
+
     
     $(document).on("click", "#go", function() {
         var userSearch = $('#userinput').val();
@@ -26,11 +30,23 @@ $(document).ready(function() {
                         var vidLikes = data.likeCount;
                         var vidframe = $('#iframe');
                         var url = "http://www.youtube.com/embed/";
+                        var loopUrl = "https://www.youtube.com/v/"+videoId+"?version=3&feature=player_embedded&loop=1&playlist=,"
                         var vidurl = url + videoId;
-                        vidframe.attr("src", vidurl);
+
+                        if(document.getElementById('looper').checked) {
+                            vidframe.attr("src", loopUrl);
+                        }
+
+                        else {
+                            vidframe.attr("src", vidurl);
+                        }
+
                         $('#views').text("Views: "+videoHits);
                         $('#author').text("Author: "+videoAuth);
                         $('#likes').text("Likes: "+vidLikes);
+                        $('#embedlink').val("http://www.youtube.com/watch?v="+videoId);
+                        
+
 
                         //var vidbox = "<iframe width='560' height='3' src='http://www.youtube.com/embed/"+videoId+"'frameborder='0' type='text/html'></iframe>";
                         //var result = "<div id = 'result'>"+vidbox+"</div>";
@@ -44,6 +60,7 @@ $(document).ready(function() {
 
     });
 
+ 
   
 });
 
