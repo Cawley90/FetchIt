@@ -57,19 +57,23 @@ body {
 
 #views {
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 5px;
+	width: 25%;
 		
 }
 
 #author {
 	display: inline-block;
-	margin-left:40%;
+	margin-left:5%;
+	height: 60px;
+	width: 35%;
 	
 }
 
 #likes {
 	display: inline-block;
-	margin-left:30%;
+	margin-left:5%;
+	width:25%;
 
 }
 

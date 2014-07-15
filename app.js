@@ -21,11 +21,17 @@ $(document).ready(function() {
                     $.each(response.data.items, function(i,data) {
                         var videoId = data.id;
                         var videoTitle = data.title;
+                        var videoAuth = data.uploader;
                         var videoHits = data.viewCount;
+                        var vidLikes = data.likeCount;
                         var vidframe = $('#iframe');
                         var url = "http://www.youtube.com/embed/";
                         var vidurl = url + videoId;
                         vidframe.attr("src", vidurl);
+                        $('#views').text("Views: "+videoHits);
+                        $('#author').text("Author: "+videoAuth);
+                        $('#likes').text("Likes: "+vidLikes);
+
                         //var vidbox = "<iframe width='560' height='3' src='http://www.youtube.com/embed/"+videoId+"'frameborder='0' type='text/html'></iframe>";
                         //var result = "<div id = 'result'>"+vidbox+"</div>";
                         //$('#result').html(result);
