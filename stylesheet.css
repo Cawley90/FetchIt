@@ -93,3 +93,8 @@ body {
 	margin:auto;
 
 }
+
+#iframe {
+	height:100%;
+	width:100%;
+}
