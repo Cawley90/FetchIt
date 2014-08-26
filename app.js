@@ -6,6 +6,7 @@ $(document).ready(function() {
         $('#options').toggle("fast");
     })
 
+
     
     $(document).on("click", "#go", function() {
         var userSearch = $('#userinput').val();
@@ -31,20 +32,21 @@ $(document).ready(function() {
                         var vidframe = $('#iframe');
                         var url = "http://www.youtube.com/embed/";
                         var loopUrl = "https://www.youtube.com/v/"+videoId+"?version=3&feature=player_embedded&loop=1&playlist=,"
-                        var vidurl = url + videoId;
+                        var vidUrl = url + videoId;
 
                         if(document.getElementById('looper').checked) {
                             vidframe.attr("src", loopUrl);
                         }
 
                         else {
-                            vidframe.attr("src", vidurl);
+                            vidframe.attr("src", vidUrl);
                         }
 
                         $('#views').text("Views: "+videoHits);
                         $('#author').text("Author: "+videoAuth);
                         $('#likes').text("Likes: "+vidLikes);
                         $('#embedlink').val("http://www.youtube.com/watch?v="+videoId);
+                        $('#vidtitle').text(videoTitle);
                         
 
 
@@ -60,6 +62,11 @@ $(document).ready(function() {
 
     });
 
+ $('#userinput').keypress(function(e) {
+            if(e.which == 13) {
+                $('#go').click();
+            }
+        });
  
   
 });

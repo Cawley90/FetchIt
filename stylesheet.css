@@ -17,7 +17,7 @@ body {
 	width:200px;
 	border-radius: 3px;
 	border: 1px solid #6A89B2;
-	
+	right: 20%;
 }
 
 #video {
@@ -29,7 +29,7 @@ body {
 	height: 150px;
 	width: 40%;
 	margin-left: 23%;
-	margin-top: 4%;
+	
 }
 
 #logotext {
@@ -89,7 +89,6 @@ body {
 	top:10px;
 	width:80%;
 	height:500px;
-	
 	margin:auto;
 
 }
@@ -112,8 +111,24 @@ body {
 	padding-right: 10px;
 	display: none;
 	position: absolute;
-	height: 400px;
-	width: 20%;
+	height: 90%;
+	width: 15%;
 	background-color: #F1EBE4;
-	top: 10%;
+	top: 5%;
+}
+
+.otext {
+	width: 100%;
+	height: 100%;
+}
+
+#go {
+	position: relative;
+	right: 19%;
+}
+
+#vidtitle {
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	padding-top: 5px;
 }
